@@ -1,0 +1,30 @@
+# Hugging Face Spaces Dockerfile
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies for LightGBM
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libgomp1 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy project files
+COPY pyproject.toml README.md ./
+COPY src/ ./src/
+COPY dashboards/ ./dashboards/
+COPY data/ ./data/
+COPY models/ ./models/
+
+# Install Python dependencies
+RUN pip install --no-cache-dir --timeout=300 .
+
+# Copy startup script
+COPY start.sh ./
+RUN chmod +x start.sh
+
+# HF Spaces uses port 7860
+ENV PORT=7860
+ENV FASTAPI_URL=http://localhost:8000
+EXPOSE 7860
+
+CMD ["./start.sh"]
