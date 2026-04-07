@@ -262,7 +262,7 @@ Customer churn --- the phenomenon of customers discontinuing their relationship 
 \midrule
 Data \& EDA & Python 3.11, pandas, NumPy, matplotlib, seaborn, Plotly \\
 Machine Learning & scikit-learn, XGBoost, LightGBM, SMOTE, SHAP \\
-Experiment Tracking & scikit-learn model comparison \\
+Experiment Tracking & MLflow \\
 REST API & FastAPI, Pydantic, uvicorn \\
 Dashboard & Dash, Plotly, dash-bootstrap-components \\
 Power BI & Power BI Desktop, DAX \\
@@ -405,7 +405,7 @@ is\_high\_spender & 1 if OrderAmountHike $>$ 20\% & Spending trajectory \\
     \item \textbf{Class Imbalance:} SMOTE inside pipeline --- training folds only, no data leakage
     \item \textbf{Validation:} Stratified 5-fold cross-validation
     \item \textbf{Primary Metric:} F1-score (balances precision and recall for minority class)
-    \item \textbf{Tracking:} All model runs compared systematically
+    \item \textbf{Tracking:} All runs logged to MLflow with hyperparameters, metrics, and model artifacts
 \end{itemize}
 
 \subsection{Model Comparison}
@@ -428,7 +428,7 @@ XGBoost & 0.9523 & 0.9976 & 0.9889 & 0.9831 \\
 
 \begin{infobox}
 \faTrophy\ \textbf{Best Model: LightGBM} --- F1: \texttt{0.9574} $|$ AUC-ROC: \texttt{0.9983} $|$ AUC-PR: \texttt{0.9914}\\[0.2cm]
-The pipeline (SMOTE + LightGBM) was saved as \tech{best\_model.joblib} and published to Hugging Face Hub.
+The pipeline (SMOTE + LightGBM) was saved as \tech{best\_model.joblib}, registered in the MLflow Model Registry, and published to Hugging Face Hub.
 \end{infobox}
 
 \subsection{SHAP Explainability}
@@ -723,7 +723,7 @@ Published artifacts: \tech{best\_model.joblib}, \tech{feature\_names.joblib}, \t
 \toprule
 \textbf{Member} & \textbf{Responsibilities} \\
 \midrule
-Ahmed ElSayed & Exploratory Data Analysis notebook, data cleaning pipeline (\tech{data\_cleaning.py}), feature engineering (\tech{feature\_engineering.py}), ML model training (4 models, stratified CV), model comparison, SHAP explainability \\
+Ahmed ElSayed & Exploratory Data Analysis notebook, data cleaning pipeline (\tech{data\_cleaning.py}), feature engineering (\tech{feature\_engineering.py}), ML model training (4 models, stratified CV), MLflow experiment tracking, SHAP explainability \\
 \midrule
 Amr Abdel Aziz & Power BI dashboard (3 pages: Executive Summary, Customer Segmentation, Risk Analysis), DAX measures, slicers, cross-filtering \\
 \midrule
