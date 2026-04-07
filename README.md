@@ -237,11 +237,11 @@ Hugging Face Space (Docker)
 
 ## Team
 
-| Member | Role | Responsibilities |
-|--------|------|-----------------|
-| **Ahmed ElSayed** | Data Engineer | EDA, data cleaning, feature engineering, ML training (4 models), MLflow tracking, SHAP explainability |
-| **Amr Abdel Aziz** | BI Developer | Power BI dashboard (3 pages), DAX measures, Power Query data preparation |
-| **Omar Gamal** | Full-Stack & MLOps | Dash dashboard (6 tabs), FastAPI API, AI agent (Gemini + LangChain), Docker, HF deployment, GitHub Projects |
+| Member | Responsibilities |
+|--------|-----------------|
+| **Ahmed ElSayed** | EDA, data cleaning, feature engineering, ML training (4 models), MLflow tracking, SHAP explainability |
+| **Amr Abdel Aziz** | Power BI dashboard (3 pages), DAX measures, Power Query data preparation |
+| **Omar Gamal** | Dash dashboard (6 tabs), FastAPI API, AI agent (Gemini + LangChain), Docker, HF deployment, GitHub Projects |
 
 ---
 
@@ -249,5 +249,4 @@ Hugging Face Space (Docker)
 
 - **Live Dashboard:** https://huggingface.co/spaces/OmarGamal48812/churnguard
 - **Model on HF Hub:** https://huggingface.co/OmarGamal48812/churn-prediction-lgbm
-- **GitHub:** https://github.com/OmarGamal488/ecommerce-churn-platform
 - **Dataset:** https://www.kaggle.com/datasets/ankitverma2010/ecommerce-customer-churn-analysis-and-prediction
